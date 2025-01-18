@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import cors from 'cors'
 import connectDb from "./db/connectDb.js";
 import {app,server} from './socket/socket.js';
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use('/api/messages',messageRoutes);
 app.use('/api/users',userRoutes);
-
+app.use(cors());
 
 server.listen(PORT, () => {
 	connectDb();
