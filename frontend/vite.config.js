@@ -9,6 +9,8 @@ export default defineConfig({
 		proxy: {
 			"/api": {
 				target: "https://chat-app-wrv0.onrender.com",
+				changeOrigin: true,
+				secure: false, // Bypass certificate validation
 			},
 		},
 	},
